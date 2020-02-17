@@ -196,7 +196,7 @@ nav ul li:hover .mega-menu{
 
 /*************************    Banner     **************************/
 #banner{
-    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url("https://images.wallpapersden.com/image/download/monkey-d-luffy-one-piece-art_66159_1280x720.jpg");
+    background-image: url(/website/img/header-background.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
