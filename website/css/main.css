@@ -127,7 +127,7 @@ nav ul li:hover .mega-menu{
         position: relative;
         padding: 0;
     }
-    
+
     #nav-top h3{
         font-size: 30px;
         padding: 5px;
@@ -164,7 +164,7 @@ nav ul li:hover .mega-menu{
     #nav-top{
         padding: 0px;
     }
-    
+
     .mega-menu{
         flex-direction: row;
         flex-wrap: wrap;
@@ -176,7 +176,7 @@ nav ul li:hover .mega-menu{
         display: none;
 
     }
-    
+
     .mega-menu li{
         flex: 0 0 25%;
     }
@@ -184,14 +184,14 @@ nav ul li:hover .mega-menu{
         height: 100%;
         text-align: center;
     }
-    
+
     .mega-menu li a{
         padding: 10px;
     }
     .mega-menu li a:hover{
         padding-left: 10px;
     }
-    
+
 }
 
 /*************************    Banner     **************************/
@@ -266,3 +266,109 @@ nav ul li:hover .mega-menu{
     border: 3px solid #f5f5f5;
 }
 
+/* ************************** Latest Mangas ********************************/
+/*title*/
+.title{
+    margin: 10px 0 30px 0;
+    cursor: pointer;
+}
+
+.title-text{
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #2b98f0;
+}
+
+.title-underline{
+    width: 20px;
+    border: 3px solid #2b98f0;
+    transition: width 2s ease, border 3s ease;
+}
+
+.title:hover .title-underline{
+    width: 100px;
+    border: 3px solid red;
+}
+
+/*lastest mangas*/
+#latest-mangas{
+    min-height: 100vh;
+    background: #000;
+    padding: 20px 0 80px 0;
+}
+
+.manga-container{
+    max-width: 90vw;
+    margin: 0 auto;
+    color: #e0e2db;
+}
+
+.latest-manga{
+    overflow: hidden;
+    position: relative;
+    padding: 30px;
+    margin: 10px auto;
+    background: #f5f5f5;
+    color: #000;
+    height: 45vh;
+    width: 70%;
+    text-align: center;
+}
+
+.front-text{
+    text-align: center;
+    transition: transform 2s;
+}
+
+.back-text{
+    position: absolute;
+    bottom: -30rem;
+    width: 80%;
+    margin: 0 auto;
+    height: 80%;
+    transition: all 2s;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.back-text h1{
+    margin-bottom: 20px;
+}
+
+.back-text button{
+    margin-top: auto;
+    padding: 5px 10px;
+    background: transparent;
+    border: 2px solid #e6af2e;
+    font-size: 20px;
+    color: #e6af2e;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+.back-text button:hover{
+    background: #e5af2e;
+    color: #191716;
+}
+
+.latest-manga:hover .front-text{
+    transform: translateY(-200px);
+}
+
+.latest-manga:hover .back-text{
+    bottom: 0;
+}
+
+@media screen and (min-width: 690px) {
+    .manga-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .latest-manga{
+        flex: 0 0 300px;
+    }
+
+    .title-text{
+        font-size: 60px;
+    }
+}
