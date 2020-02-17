@@ -36,7 +36,7 @@ nav>ul>li a, .mega-menu li a{
     text-decoration: none;
     padding: 10px;
     font-size: 1.2rem;
-    transition: color 1s ease, background 1s ease, padding 1s ease;
+    transition: color 0.5s ease, background 0.5s ease, padding 0.5s ease;
     cursor: pointer;
 }
 
@@ -211,15 +211,22 @@ nav ul li:hover .mega-menu{
 }
 
 .search-box input{
-    width: 30%;
-    height: 2rem;
+    padding: 7px 10px;
+    width: 30%
 }
 
 .search-box button{
-    padding: 15px 32px;
-    font-size: 16px;
+    padding: 7px 10px;
+    font-size: 14px;
+    color: #f5f5f5;
+    background: #2b98f0;
+    transition: all 0.5s ease;
 }
 
+.search-box button:hover{
+    background: #f5f5f5;
+    color: #2b98f0;
+}
 
 #banner-box{
     color: #f5f5f5;
