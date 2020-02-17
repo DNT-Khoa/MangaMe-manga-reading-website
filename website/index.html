@@ -3,17 +3,8 @@
 
 <head>
     <title>MangaMe</title>
-    <base href="http://i430022.hera.fhict.nl/">
-
-
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="A place to read manga for free. We provide the newest manga online!">
-    <meta name="keywords" content="manga, free, online, japanese comics, anime, newest, light novel, japanese novel, english, japanese">
-
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://use.fontawesome.com/811f2a5935.js"></script>
 </head>
 
@@ -21,9 +12,9 @@
     <header id="header">
         <!-- nav -->
         <nav>
-            <div class="nav-top">
+            <div id="nav-top">
                 <h3>MangaMe</h3>
-                <div class="menu-btn">
+                <div id="menu-btn">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
@@ -53,17 +44,23 @@
         </nav>
         <!-- end of nav -->
         <section id="banner">
-            <div class="banner-box">
-                <img class="logo" src="" alt="">
+            <div id="banner-box">
+                <img class="logo" src="img/MangaMe-logo.png" alt="">
                 <h1 id="banner-title">Welcome To MangaMe</h1>
                 <div class="banner-underline"></div>
                 <h3 class="banner-subtitle">Find you favorite manga below</h3>
                 <form class="search-box" action="index.html" method="post">
                     <input type="text" name="search" placeholder="Search here...">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
         </section>
     </header>
+<!-- end of header-->
+<!--JQuery-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="script.js">
+  </script>
 </body>
 
 </html>

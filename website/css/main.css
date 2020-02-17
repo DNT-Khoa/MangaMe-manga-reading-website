@@ -1,0 +1,261 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5;
+}
+
+#header{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav{
+    flex: 0 0 auto;
+    background: #f5f5f5;
+}
+
+#banner{
+    flex: 1 0 auto;
+}
+
+nav ul{
+    list-style-type: none;
+    display: none;
+}
+
+nav>ul>li a, .mega-menu li a{
+    display: block;
+    color: #2b98f0;
+    background: transparent;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    transition: color 1s ease, background 1s ease, padding 1s ease;
+    cursor: pointer;
+}
+
+.mega-menu{
+    flex-direction: column;
+    display: none;
+}
+
+.mega-menu li a{
+    padding-left: 60px;
+}
+
+
+nav ul li a:hover{
+    color: #f5f5f5;
+    padding-left: 30px;
+    background: #2b98f0;
+}
+
+.mega-menu li a:hover{
+    color: #f5f5f5;
+    padding-left: 80px;
+}
+
+nav ul li:hover .mega-menu{
+    display: flex;
+}
+
+#nav-top{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 10px;
+}
+
+#nav-top h3{
+    font-size: 30px;
+    padding: 5px;
+    color: #2b98f0;
+    border: 3px solid;
+    transition: color 2s ease, background 2s ease;
+    cursor: pointer;
+}
+
+#nav-top h3:hover{
+    background: #2b98f0;
+    color: #f5f5f5;
+}
+
+#menu-btn{
+    padding: 5px;
+    border: 2px solid #2b98f0;
+    cursor: pointer;
+    align-self: center;
+}
+
+.bar1,
+.bar2,
+.bar3{
+    height: 5px;
+    width: 35px;
+    background-color: #2b98f0;
+    margin: 5px 0;
+    transition: transform 1s ease;
+}
+
+.turn .bar1{
+    transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.turn .bar2{
+    opacity: 0;
+}
+
+.turn .bar3{
+    transform: rotate(45deg) translate(-7px, -8px);
+}
+
+.sign a{
+    color: #000;
+    background: #83E03D;
+    border: 3px solid #E7E92A;
+}
+@media screen and (min-width: 690px){
+    nav{
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        position: relative;
+        padding: 0;
+    }
+    
+    #nav-top h3{
+        font-size: 30px;
+        padding: 5px;
+        margin: 5px;
+        color: #2b98f0;
+        border: 3px solid;
+        transition: color 2s ease, background 2s ease;
+        cursor: pointer;
+    }
+
+    #menu-btn{
+        display: none;
+    }
+
+    nav>ul{
+        flex: 1 1 auto;
+        display: flex!important;
+        flex-wrap: wrap;
+    }
+
+    nav>ul>li{
+        flex: 1 0 125px;
+        padding: 5px
+    }
+
+    nav>ul a{
+        text-align: center;
+    }
+
+    nav>ul a:hover{
+        padding: 10px!important;
+    }
+
+    #nav-top{
+        padding: 0px;
+    }
+    
+    .mega-menu{
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: absolute;
+        background: white;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: none;
+
+    }
+    
+    .mega-menu li{
+        flex: 0 0 25%;
+    }
+    .mega-menu li a{
+        height: 100%;
+        text-align: center;
+    }
+    
+    .mega-menu li a{
+        padding: 10px;
+    }
+    .mega-menu li a:hover{
+        padding-left: 10px;
+    }
+    
+}
+
+/*************************    Banner     **************************/
+#banner{
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url("https://images.wallpapersden.com/image/download/monkey-d-luffy-one-piece-art_66159_1280x720.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.logo{
+    width: 100px;
+}
+
+.search-box input{
+    width: 30%;
+    height: 2rem;
+}
+
+.search-box button{
+    padding: 15px 32px;
+    font-size: 16px;
+}
+
+
+#banner-box{
+    color: #f5f5f5;
+    text-align: center;
+}
+
+#banner-title{
+    text-transform: capitalize;
+    font-size: 60px;
+}
+
+.banner-underline{
+    width: 200px;
+    margin: 10px auto;
+    border: 3px solid black;
+}
+
+.banner-subtitle{
+    margin: 20px 0;
+    text-transform: capitalize;
+    font-size: 25px
+}
+
+#banner-box a{
+    display: inline-block;
+    padding: 10px;
+    font-size: 40px;
+    text-decoration: none;
+    color: #f5f5f5;
+    background: #2b98f0;
+    border: 3px solid #2b98f0;
+    transition: background 3s ease, border 0.5s ease;
+}
+
+#banner-box a:hover{
+    background: transparent;
+    border: 3px solid #f5f5f5;
+}
+
