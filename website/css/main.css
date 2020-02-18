@@ -290,149 +290,67 @@ nav ul li:hover .mega-menu{
     border: 3px solid red;
 }
 
-/*lastest mangas*/
-
-#latest-mangas{
-    min-height: 100vh;
-    background: #f5f5f5;
-    padding: 20px 0 80px 0;
+/*latest manga*/
+.image-box{
+    width: 15rem;
+    height: 25rem;
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 1s ease;
 }
 
-.manga-container{
-    max-width: 90vw;
-    margin: 0 auto;
-    color: #e0e2db;
-    display: flex;
-    flex-direction: column;
+#latest-manga{
+    padding: 40px;
+    background: #c9c9c9;
 }
 
-.latest-manga{
-    overflow: hidden;
+.manga{
     position: relative;
-    padding: 30px;
-    margin: 10px auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    height: 25rem;
+    border-radius: 10px;
+    width: 15rem;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.image-box:hover{
+    opacity: 0.4;
+}
+
+.image-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    margin-bottom: -80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
     background: #f5f5f5;
-    color: #f5f5f5;
-    height: 60vh;
-    width: 60%;
-    text-align: center;
+    color: #2b98f0;
+    transition: margin 2s ease;
 }
 
-.front-text{
-    text-align: center;
-    transition: all 2.5s;
-    background: #000;
-    position: absolute;
-    bottom: 0;
-    width: 80%;
-    margin: 0 auto;
-    
+.manga:hover .image-overlay{
+    margin-bottom: 0;
 }
 
-.back-text{
-    position: absolute;
-    bottom: -30rem;
-    width: 80%;
-    margin: 0 auto;
-    height: 80%;
-    transition: all 2s;
-    padding: 30px 0;
-    color: #f5f5f5;
-    background: #000;
+.image-overlay button{
+    padding: 10px 20px;
+    font-size: 15px;
+    background: #ffd500;
+    font-weight: bold;
 }
 
-.back-text h1, .back-text p{
-    margin-bottom: 20px;
-}
-
-.back-text button{
-    margin-top: 20px;
-    padding: 5px 10px;
-    background: transparent;
-    border: 2px solid #e6af2e;
-    font-size: 20px;
-    color: #e6af2e;
-    transition: background 0.5s ease, color 0.5s ease;
-}
-
-.back-text button:hover{
-    background: #e5af2e;
-    color: #191716;
-}
-
-.latest-manga:hover .front-text{
-    transform: translateY(50px);
-}
-
-.latest-manga:hover .back-text{
-    bottom: 0;
-}
-
-
-.one-piece-chap1{
-    background: url(/website/img/one-piece-chap1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-.attack-on-titan-chap1{
-    background: url(/website/img/attack-on-titan-chap1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-.naruto-chap1{
-    background: url(/website/img/naruto-chap1.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-.one-punch-man-chap1{
-    background: url(/website/img/one-punch-man-chap1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-.dragon-ball-chap1{
-    background: url(/website/img/dragon-ball-chap1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-.conan-chap1{
-    background: url(/website/img/conan-chap1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-@media screen and (min-width: 690px) {
+@media screen and (min-width: 576px) {
     .manga-container{
         display: flex;
         flex-wrap: wrap;
-    }
-
-    .latest-manga{
-        flex: 0 0 300px;
-    }
-
-    .title-text{
-        font-size: 50px;
-    }
-    
-    .title-underline{
-        width: 130px;
-        border: 3px solid #2b98f0;
-        transition: width 2s ease, border 3s ease;
-    }
-
-.title:hover .title-underline{
-        width: 300px;
-        border: 3px solid red;
+        justify-content: space-between;
     }
 }
+
