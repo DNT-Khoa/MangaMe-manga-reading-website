@@ -196,7 +196,7 @@ nav ul li:hover .mega-menu{
 
 /*************************    Banner     **************************/
 #banner{
-    background-image: url(/website/img/header-background.jpg);
+    background-image: url(/img/header-background.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -302,7 +302,7 @@ nav ul li:hover .mega-menu{
 
 #latest-manga{
     padding: 40px;
-    background: url(/website/img/latest-manga-background.jpg);
+    background: url(/img/latest-manga-background.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -311,7 +311,7 @@ nav ul li:hover .mega-menu{
 
 #hot-manga{
     padding: 40px;
-    background: url(/website/img/hot-manga-background.jpg);
+    background: url(/img/hot-manga-background.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -413,11 +413,6 @@ nav ul li:hover .mega-menu{
 
 /****************** contact us *****************/
 #contact-us{
-    /* background: url(/website/img/contact-us-background.jpg)
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(169,125,196,1) 0%, rgba(36,128,184,1) 47%, rgba(98,189,193,1) 89%, rgba(10,176,209,1) 100%);
     padding: 40px;
@@ -500,7 +495,7 @@ nav ul li:hover .mega-menu{
 
 #about-us{
     padding: 40px;
-    background: url(/website/img/about-us-background.jpg);
+    background: url(/img/about-us-background.jpg);
     color: #f5f5f5;
 }
 
