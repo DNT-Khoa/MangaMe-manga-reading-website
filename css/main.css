@@ -397,6 +397,7 @@ nav ul li:hover .mega-menu{
     font-size: 20px;
     background: #2b98f0;
     transition: background 1s;
+    border-style: none;
 }
 
 .read-more-btn button a{
