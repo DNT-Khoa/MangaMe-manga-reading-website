@@ -28,14 +28,15 @@ if(isset($_GET['id'])) {
     $manga_status = $_POST['manga-status'];
     $manga_description = $_POST['manga-description'];
 
-    $sql = "INSERT INTO mangas (manga_image, manga_name, author, category_title, status, description)
-            VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO mangas (manga_image, manga_name, author, category_title, status, description, views)
+            VALUES (?, ?, ?, ?, ?, ?, 0)";
     $stmt = $con->prepare($sql);
     $res = $stmt->execute([$manga_image, $manga_name, $manga_author, $category_title, $manga_status, $manga_description]);
 
     if ($res) {
       $_SESSION['SuccessMessage'] = 'You have successfully added the manga';
     } else {
+      print_r($stmt->errorInfo());
       $_SESSION['ErrorMessage'] = 'Fail to add manga. Please check it again';
     }
   }

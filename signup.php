@@ -8,15 +8,16 @@
     $password = $_POST['password'];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users SET user_username=:username, user_email=:email, user_password=:password, user_role='reader'";
+    $sql = "INSERT INTO users SET user_username=?, user_email=?, user_password=?, user_role='reader', user_image=''";
     $stmt = $con->prepare($sql);
-    $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $hash);
-    $res = $stmt->execute();
+
+    $res = $stmt->execute([$username, $email, $hash]);
 
     if ($res) {
       Redirect_to('login.php');
+    } else {
+      print_r($stmt->errorInfo());
+
     }
   }
  ?>
@@ -57,4 +58,4 @@
   </div>
 
 </section>
-<?php include 'includes/footer.php'; ?>
+<?php require_once('includes/footer.php') ?>
