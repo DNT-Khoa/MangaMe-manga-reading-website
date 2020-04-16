@@ -68,12 +68,12 @@ body{
     background: #f5f5f5;
     width: 350px;
     height: 35px;
-    border: 2px solid #ff6666;
+    border: 2px solid #2b98f0;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     padding: 5px 10px;
     font-size: 16px;
-    color: #ff6666;
+    color: black;
 }
 
 #search-input:focus{
@@ -90,14 +90,14 @@ body{
     color: #f5f5f5;
     font-size: 20px;
     font-weight: bold;
-    background: #ff6666;
+    background: #2b98f0;
     cursor: pointer;
     transition: all 0.5s;
-    border: 2px solid #ff6666;
+    border: 2px solid #2b98f0;
 }
 
 .search-form button:hover{
-    color: #ff6666;
+    color: #2b98f0;
     background: #f5f5f5;
 }
 .search-form{
@@ -110,7 +110,7 @@ body{
     color: #ccc;
 }
 
-#login-link{
+#login-link, #account-link{
     background: #88d04d;
     padding: 10px 30px;
     letter-spacing: 1px;
@@ -119,6 +119,23 @@ body{
     margin-right: 30px;
     transition: all 0.5s;
     border-radius: 5px;
+}
+
+#account-link{
+    background: #fff68f;
+    color: #15202b;
+    padding: 10px 10px;
+}
+
+#account-link:hover{
+    background: #15202b;
+    color: #fff68f;
+}
+
+#account-link img{
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 #login-link:hover{
@@ -143,7 +160,7 @@ body{
 
 #signout-link{
     background: #ff6666;
-    padding: 10px 30px;
+    padding: 12px 30px;
     letter-spacing: 1px;
     color: #f5f5f5;
     font-weight: bold;
@@ -206,11 +223,15 @@ body{
 
     .nav-right{
         display: none;
+        text-align: center;
     }
     .nav-toggle-btn{
         display: block;
     }
 
+    #account-link{
+        margin: 20px auto;
+    }
     .show-nav .nav-right{
         display: flex;
     }
@@ -240,15 +261,15 @@ body{
 
 /*************************    Banner     **************************/
 #banner{
-    background-image: url(/MangaMe/img/header-background.jpg);
+    background-image: url(/img/header-background.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 92vh;
+    min-height: 70vh;
 }
 
 .logo{
@@ -350,7 +371,7 @@ body{
 
 /*latest manga & hot mangas*/
 #latest-mangas{
-    background-image: url(/MangaMe/img/body-background.jpg);
+    background-image: url(/img/body-background.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -379,6 +400,7 @@ body{
     text-align: center;
     margin: 0 3px 10px 0;
     flex: 1 0 auto;
+    margin-bottom: 30px;
 }
 
 .item a{
@@ -466,123 +488,111 @@ body{
 
 /********************** Sign Up and Log In Styling *********** */
 
-#signup, #login{
-    font-family: 'Open Sans', sans-serif;
+#signup{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
 }
 
-#signup h2, #login h2{
+body{
+    background: lightgrey;
+}
+
+.signup-wrapper{
+    background: white;
+    width: 500px;
+    padding: 10px 10px 30px;
     text-align: center;
+    margin: 70px 0;
+    border-radius: 7px;
 }
 
-.login-system-wrapper{
-    background-color: white;
-    border-radius: 5px;
-    width: 400px;
-    max-width: 100%;
-    overflow: hidden;
+#signup h2{
+    margin-bottom: 30px;
+}
+#signup form{
+    width: 80%;
+    padding: 2px;
+    margin: 2px auto 15px;
+}
+#signup p{
+    margin: 5px 0;
+    text-align: left;
+    padding-bottom: 5px;
+    padding-top: 20px;
 }
 
-#signup .header, #login .header{
-    background: #2b98f0;
-    padding: 20px 40px;
-    border-bottom: 1px solid #f0f0f0;
-    color: white;
+#signup label{
+    font-weight: 200;
 }
-
-.form{
-    padding: 30px 40px;
-}
-
-.form-control{
-    margin-bottom: 15px;
-    padding-bottom: 20px;
-    position: relative;
-}
-
-.form-control label{
-    display: inline-block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-control input{
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
+#signup input{
     display: block;
+    padding: 7px;
+    padding-bottom: 1px;
+    border: none;
+    border-bottom: 1px dashed #2b98f0;
     width: 100%;
-    padding: 10px;
     outline: none;
+    font-size: 1.2rem;
+    transition: all 0.5s ;
 }
 
-.form-control input::placeholder{
-    color: #ccc;
+#signup input:focus{
+    border-bottom: 2px solid #2b98f0;
+}
+#signup img{
+    width: 130px;
+    margin-top: 30px;
 }
 
-.form-control i {
-    position: absolute;
-    top: 38px;
-    right: 10px;
-    visibility: hidden;
-    font-size: 20px;
-}
-
-.form-control small {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
-}
-
-.form input[type=submit]{
+#signup input[type=submit] {
+    padding: 12px;
+    border: none;
     background: #2b98f0;
-    border: 1px solid #2b98f0;
-    padding: 12px 10px;
-    display: block;
-    width: 100%;
-    font-size: 18px;
-    font-weight: bold;
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.5s;
 }
 
-.form input[type=submit]:hover{
+#signup input[type=submit]:hover{
     background: white;
+    border: 1px solid #2b98f0;
     color: #2b98f0;
 }
 
-.form-control.success input{
-    border-color: #2ecc71;
+#signup a{
+    color: #2b98f0;
+    transition: 0.5s ease;
+}
+#signup a:hover{
+    color: red;
 }
 
-.form-control.error input{
-    border-color: #e74c3c;
+#signup input[type=checkbox]{
+    display: inline-block;
+    width: 28px;
+    margin: 0;
+    padding: 0;
+    height: 17px;
 }
 
-.form-control.success i.fa-check-circle{
-    color: #2ecc71;
-    visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle{
-    color: #e74c3c;
-    visibility: visible;
+#signup input[type=checkbox] + label {
+    display: inline;
+    position: relative;
+    top: -2px;
 }
 
 
-.form-control.error small{
-    color: #e74c3c;
-    visibility: visible;
+.error {
+    width: 100%;
+    color: red;
+    text-align: left;
+    font-size: 14px;
 }
-
 /***************************** Manga Information *****************************/
 #manga-info{
-    background-image: url(/MangaMe/img/body-background.jpg);
+    background-image: url(/img/body-background.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -760,12 +770,12 @@ body{
     background: white;
 }
 
-.manga-description, .chapter-list{
+.manga-description1, .chapter-list{
     clear: both;
     padding-top: 30px;
 }
 
-.manga-description h3, .chapter-list h3{
+.manga-description1 h3, .chapter-list h3{
     border-bottom: 5px solid #2b98f0;
     padding: 10px 0;
     margin-bottom: 20px;
@@ -808,6 +818,7 @@ body{
 }
 
 /* ***************** Styling Admin Categories Page **************** */
+
 .admin-container {
     text-align: center;
     max-width: 1400px;
@@ -930,4 +941,165 @@ footer a{
 .success-message{
     background: #5cb85c;
     color: white;
+}
+
+/* ********************* MY ACCOUNT STYLING ********************** */
+
+#personal-info{
+    text-align: center;
+    background-image: url(/img/body-background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#personal-info button {
+    margin-top: 3px;
+    padding: 5px;
+    background: yellow;
+    font-weight: bold;
+    border-style: none;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+#personal-info button:hover{
+    background: black;
+}
+
+#personal-info button:hover a{
+    color: yellow;
+}
+
+.avatar-image {
+    margin-bottom: 30px;
+}
+
+.upload-img-btn {
+    padding: 5px;
+    background: red;
+    color: #fff;
+    border-style: none;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.upload-img-btn:hover {
+    background: #fff;
+    color: #000;
+    border: 1px solid red;
+}
+.upload-btn {
+    color: white;
+    cursor: pointer;
+}
+
+
+.update-info-btn {
+    padding: 5px 9px;
+    cursor: pointer;
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
+    border-style: none;
+}
+
+.update-info-btn:hover {
+    background: #fff;
+    border: 1px solid yellow;
+}
+.avatar-image img{
+    width: 150px;
+}
+
+.account-info{
+    margin-top: 80px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.info-details {
+    border: 1px solid white;
+    padding: 15px 20px;
+    margin-top: 30px;
+}
+
+.detail input[type=text] {
+    width: 200px;
+    height: 25px;
+}
+.info-group{
+    margin-bottom: 12px;
+}
+
+.label {
+    float: left;
+    text-align: left;
+    font-weight: bold;
+}
+
+.account-info td:nth-child(2n + 1) {
+    font-weight: bold;
+}
+
+.bookmarks{
+    margin-bottom: 80px;
+    color: white;
+}
+
+.bookmarks table {
+    width: 100%;
+    margin: 50px auto 0;
+}
+
+.bookmarks th{
+    padding: 10px;
+    background: black;
+}
+
+/******************************* ADD MANGA STYLING ****************************/
+.category-option {
+    margin: 20px auto;
+    padding: 10px 50px;
+}
+
+.manga-description {
+    margin: 20px auto;
+    width: 400px;
+    height: 150px;
+}
+
+.small-image {
+    height: 50px;
+    width: 60px;
+}
+
+
+
+@media screen and (max-width: 718px) {
+    .manga-description {
+        width: 100%;
+    }
+
+}
+
+/* **************** STYLING CHAPTER PAGE **********************/
+.chapter_title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.image-container {
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
 }

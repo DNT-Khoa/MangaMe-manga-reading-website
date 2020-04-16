@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,17 +18,24 @@
     <div class="nav-container">
 
         <div class="nav-left">
-            <a href="index.php" class="logo link">MangaMe</a>
+            <a href="manga.admin.php" class="logo link">MangaMe</a>
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link link">Mangas</a>
+                        <a href="manga.admin.php" class="nav-link link">Mangas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link link">Chapters</a>
+                        <a href="chapter.admin.php" class="nav-link link">Chapters</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link link">Categories</a>
+                        <a href="image.admin.php" class="nav-link link">Images</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="categories.admin.php" class="nav-link link">Categories</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="admin.php" class="nav-link link">Admin</a>
                     </li>
                 </ul>
             </nav>
@@ -40,7 +48,8 @@
             </form>
 
             <div class="user-nav">
-                <a href="login.php" class="link" id="signout-link">Sign Out</a>
+                <a href="account.admin.php" class="link" id="account-link">My Account</a>
+                <a href="signout.php" class="link" id="signout-link">Sign Out</a>
             </div>
         </div>
 

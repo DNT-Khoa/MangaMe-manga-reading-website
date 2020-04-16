@@ -16,14 +16,14 @@
 <section id="latest-mangas">
     <div class="wrapper">
         <div class="title">
-            <h1 class="title-text">Latest Mangas</h1>
+            <h1 class="title-text">Hot Mangas</h1>
             <div class="title-underline"></div>
         </div>
 
         <div class="main-content">
             <div class="left-div">
                 <?php
-                    $sql = "SELECT * FROM chapters ORDER BY chapter_id DESC";
+                    $sql = "SELECT * FROM chapters ORDER BY view DESC";
                     $stmt = $con->query($sql);
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
                  ?>
@@ -40,6 +40,7 @@
                     </h2>
                     <a href="chapter.php?chapter_id=<?php echo $row['chapter_id'] ?>" class="link chapter-name"><?php echo $row['chapter_name'] ?></a>
                     <p class="elapsed-time"><?php echo $row['date_release'] ?></p>
+                    <p class="elapsed-time">Views: <?php echo $row['view'] ?></p>
                 </div>
             <?php endwhile;?>
 

@@ -1,3 +1,8 @@
+<?php require_once('helpers/db.php') ?>
+
+<?php
+    session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/navBarToggle.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/scripts.js"></script>
 </head>
 
 <body>
@@ -21,27 +27,31 @@
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link link">Home</a>
+                        <a href="index.php" class="nav-link link">Latest</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link link">Latest</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link link">Hot</a>
+                        <a href="hot.php" class="nav-link link">Hot</a>
                     </li>
                 </ul>
             </nav>
         </div>
 
         <div class="nav-right">
-            <form class="search-form" action="index.html" method="post">
-                <input type="text" id="search-input" placeholder="Search here...">
+            <form class="search-form" action="manga-by-search.php" method="post">
+                <input type="text" id="search-input" placeholder="Search here..." name="search-input">
                 <button type="submit" name="search-btn"><i class="fa fa-search"></i></button>
             </form>
 
             <div class="user-nav">
-                <a href="login.php" class="link" id="login-link">Login</a>
-                <a href="signup.php" class="link" id="signup-link">Register</a>
+                <?php
+                    if (isset($_SESSION['user_id'])) {
+                        echo '<a href="account.php" class="link" id="account-link">My Account</a>
+                        <a href="signout.php" class="link" id="signout-link">Sign Out</a>';
+                    } else {
+                        echo '<a href="login.php" class="link" id="login-link">Login</a>
+                        <a href="signup.php" class="link" id="signup-link">Register</a>';
+                    }
+                 ?>
             </div>
         </div>
 

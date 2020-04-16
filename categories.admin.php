@@ -12,10 +12,8 @@ if(isset($_GET['id'])) {
 
   if ($res) {
     $_SESSION['SuccessMessage'] = 'Category has been successfully deleted';
-    Redirect_to("categories.admin.php");
   } else {
     $_SESSION['SuccessMessage'] = 'Something went wrong';
-    Redirect_to("categories.admin.php");
   }
 }
 

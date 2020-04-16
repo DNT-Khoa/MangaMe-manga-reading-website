@@ -1,5 +1,12 @@
 <?php include 'includes/header.php' ?>
 <?php require_once('helpers/db.php') ?>
+<?php
+    $manga_id = $_GET['manga_id'];
+    $con->query("UPDATE mangas SET views = views + 1 WHERE manga_id = '$manga_id'"); //This is for counting views everytime users land on this page
+    $sql = "SELECT * FROM mangas WHERE manga_id = '$manga_id'";
+    $stmt = $con->query($sql);
+    $res = $stmt->fetch(PDO::FETCH_ASSOC);
+ ?>
 
 <!-- Manga Info -->
 <section id="manga-info">
@@ -7,41 +14,41 @@
         <div class="main-content">
             <div class="left-div">
                 <article class="manga-detail">
-                    <h1>ONE PIECE</h1>
-                    <time class="small">[Update at: 05:47 03/03/2020]</time>
+                    <h1><?php echo $res['manga_name'] ?></h1>
+                    <time class="small">[Update at: <?php echo $res['release_date'] ?>]</time>
                     <div class="img-and-info">
                         <div class="img-content">
-                            <img src="img/one-piece-chap1.jpg" alt="">
+                            <img src="<?php echo $res['manga_image'] ?>" alt="">
                         </div>
                         <div class="info-content">
                             <ul class="list-info">
                                 <li>
                                     <p><i class="fa fa-user"></i>Author</p>
-                                    <p class="p-content">Oda Eiichiro</p>
+                                    <p class="p-content"><?php echo $res['author'] ?></p>
                                 </li>
                                 <li>
                                     <p><i class="fa fa-rss"></i>Status</p>
-                                    <p class="p-content">Ongoing</p>
+                                    <p class="p-content"><?php echo $res['status'] ?></p>
                                 </li>
                                 <li>
                                     <p><i class="fa fa-tags"></i>Category</p>
-                                    <p class="p-content">Adventure</p>
+                                    <p class="p-content"><?php echo $res['category_title'] ?></p>
                                 </li>
                                 <li>
                                     <p><i class="fa fa-eye"></i>Views</p>
-                                    <p class="p-content">20.323.323</p>
+                                    <p class="p-content"><?php echo $res['views'] ?></p>
                                 </li>
                             </ul>
                             <div id="star-rating">
-                                <input type="radio" name="star" id="star5" >
+                                <input type="radio" name="star" id="star5" value="5">
                                 <label for="star5"></label>
-                                <input type="radio" name="star" id="star4" >
+                                <input type="radio" name="star" id="star4" value="4">
                                 <label for="star4"></label>
-                                <input type="radio" name="star" id="star3">
+                                <input type="radio" name="star" id="star3" value="3">
                                 <label for="star3"></label>
-                                <input type="radio" name="star" id="star2">
+                                <input type="radio" name="star" id="star2" value="2">
                                 <label for="star2"></label>
-                                <input type="radio" name="star" id="star1">
+                                <input type="radio" name="star" id="star1" value="1">
                                 <label for="star1"></label>
                             </div>
 
@@ -49,21 +56,23 @@
                                 Average Ranking: 3.9/5 - 35573 ratings
                             </div>
                             <div class="">
-                                <a href="" class="bookmark link">
-                                    <i class="fa fa-heart"></i>
-                                    <span>Bookmark</span>
-                                </a>
+                                <?php if (isset($_SESSION['user_id'])) {
+                                    echo '<a href="" class="bookmark link">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Bookmark</span>
+                                    </a>;';
+                                } ?>
+
+
                             </div>
                         </div>
                     </div>
-                    <div class="manga-description">
+                    <div class="manga-description1">
                         <h3>
                             <i class="fa fa-file-text-o"></i>
                             Description
                         </h3>
-                        <p>One Piece ( Japanese : ep ン ピ ー ス Hepburn : Wan Pīsu) is a Japanese manga series written and illustrated by Eiichiro Oda . The manga has been published in series since 19 July 1997 in the Weekly Shonen Jump magazine of Shueisha . The chapters are collected in ninety-four tank voucher volumes .
-
-One Piece follows the adventures of Monkey D. Luffy, a funny young man whose body acquires the characteristics of rubber after the unintentional eating of a devil fruit. With his various pirate crew members called the Straw Hat Pirates ( Japanese : Hepburn  : Mugiwara no Ichimi), Luffy explores the ocean in search of the world of the ultimate treasure known as "One Piece" to become the next pirate king.</p>
+                        <p><?php echo $res['description'] ?></p>
                     </div>
                     <div class="chapter-list">
                         <h3>
@@ -82,160 +91,24 @@ One Piece follows the adventures of Monkey D. Luffy, a funny young man whose bod
                                     Views
                                 </div>
                             </li>
+                            <?php
+                                $sql = "SELECT * FROM chapters WHERE manga_id = '$manga_id' ORDER BY chapter_id DESC";
+                                $stmt = $con->query($sql);
+                                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
+                             ?>
+
                             <li>
                                 <div class="chapter-nameM">
-                                    Chapter Name
+                                    <a class="link" href="chapter.php?chapter_id=<?php echo $row['chapter_id'] ?>"><?php echo $row['chapter_name'] ?></a>
                                 </div>
                                 <div class="chapter-upload-dateM small">
-                                    Date Released
+                                    <?php echo $row['date_release'] ?>
                                 </div>
                                 <div class="chapter-viewM small">
-                                    Views
+                                    <?php echo $row['view'] ?>
                                 </div>
                             </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chapter-nameM">
-                                    Chapter Name
-                                </div>
-                                <div class="chapter-upload-dateM small">
-                                    Date Released
-                                </div>
-                                <div class="chapter-viewM small">
-                                    Views
-                                </div>
-                            </li>
+                        <?php endwhile; ?>
 
                         </ul>
                     </div>
@@ -252,7 +125,7 @@ One Piece follows the adventures of Monkey D. Luffy, a funny young man whose bod
                         while ($row = $res->fetch(PDO::FETCH_ASSOC)):
                     ?>
                     <li>
-                        <a href="#"><?php echo $row['title']; ?></a>
+                        <a href="manga-by-category.php?category=<?php echo $row['title'] ?>"><?php echo $row['title']; ?></a>
                     </li>
                     <?php endwhile; ?>
                 </ul>

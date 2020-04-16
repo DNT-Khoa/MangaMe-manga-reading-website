@@ -1,6 +1,8 @@
-<?php require_once('includes/header.php') ?>
 <?php require_once('helpers/db.php') ?>
-<?php require_once('helpers/functions.php')  ?>
+<?php require_once('helpers/sessions.php') ?>
+<?php require_once('helpers/functions.php') ?>
+
+<?php require_once('includes/header.admin.php') ?>
 <?php
   if (isset($_POST['submit'])) {
     $username = $_POST['username'];
@@ -8,16 +10,12 @@
     $password = $_POST['password'];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users SET user_username=:username, user_email=:email, user_password=:password, user_role='reader'";
+    $sql = "INSERT INTO users SET user_username=:username, user_email=:email, user_password=:password, user_role='admin'";
     $stmt = $con->prepare($sql);
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':password', $hash);
     $res = $stmt->execute();
-
-    if ($res) {
-      Redirect_to('login.php');
-    }
   }
  ?>
 
@@ -25,11 +23,11 @@
 
   <div class="signup-wrapper">
     <img src="img/MangaMe-logo.png" alt="">
-    <h2>Sign Up To MangaMe!</h2>
+    <h2>Add A New Admin!</h2>
     <div id="ajax-message">
 
     </div>
-    <form class="" action="signup.php" method="post" onsubmit="return checkRegister()">
+    <form class="" action="admin.php" method="post" onsubmit="return checkRegister()">
       <p>
         <label for="username">Username</label>
         <input type="text" name="username" id="username" onkeyup="return checkUsername()">
@@ -51,7 +49,7 @@
       </p>
       <div id="password2-error" class="error"></div>
       <p>
-        <input type="submit" name="submit" value="Sign Up">
+        <input type="submit" name="submit" value="Add Admin">
       </p>
     </form>
   </div>
