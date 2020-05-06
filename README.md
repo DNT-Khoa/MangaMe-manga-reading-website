@@ -1,1 +1,1 @@
-http://i411472.hera.fhict.nl/index.html
+Link to MangaMe: http://i411472.hera.fhict.nl/
