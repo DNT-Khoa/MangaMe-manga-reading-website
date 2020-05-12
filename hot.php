@@ -38,7 +38,7 @@
                     <h2>
                         <a href="manga.php?manga_id=<?php echo $res['manga_id'] ?>" class="link"><?php echo $res['manga_name'] ?></a>
                     </h2>
-                    <a href="chapter.php?chapter_id=<?php echo $row['chapter_id'] ?>" class="link chapter-name"><?php echo $row['chapter_name'] ?></a>
+                    <a href="chapter.php?chapter_id=<?php echo $row['chapter_id'] ?>" class="link chapter-name"><?php echo Shorten($row['chapter_name'], 30) ?></a>
                     <p class="elapsed-time"><?php echo $row['date_release'] ?></p>
                     <p class="elapsed-time">Views: <?php echo $row['view'] ?></p>
                 </div>

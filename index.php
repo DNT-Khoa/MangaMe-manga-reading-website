@@ -14,7 +14,42 @@
 <!-- latest mangas body -->
 <!-- latest mangas-->
 <section id="latest-mangas">
+    
+
     <div class="wrapper">
+        <div class="title">
+            <h1 class="title-text">Trending</h1>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="manga-slider">
+            <i class="fa fa-chevron-left prev"></i>
+            <i class="fa fa-chevron-right next"></i>
+            <div class="manga-slider-container">
+                <?php
+                    $sql = "SELECT * FROM chapters ORDER BY view DESC LIMIT 5";
+            
+                    $stmt = $con->query($sql);
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):
+                 ?>
+                <div class="item">
+                    <a href="chapter.php?chapter_id=<?php echo $row['chapter_id'] ?>"><img src="<?php
+                    $m_id = $row['manga_id'];
+                    $sql1 = "SELECT * FROM mangas WHERE manga_id = '$m_id'";
+                    $stmt1 = $con->query($sql1);
+                    $res = $stmt1->fetch(PDO::FETCH_ASSOC);
+                    echo $res['manga_image'];
+                    ?>" alt=""></a>
+                    <h2>
+                        <a href="manga.php?manga_id=<?php echo $res['manga_id'] ?>" class="link"><?php echo $res['manga_name'] ?></a>
+                    </h2>
+                    <a href="chapter.php?chapter_id=<?php echo $row['chapter_id'] ?>" class="link chapter-name"><?php echo Shorten($row['chapter_name'], 30) ?></a>
+                    <p class="elapsed-time"><?php echo $row['date_release'] ?></p>
+                </div>
+                <?php endwhile;?>
+            </div>
+        </div>
+
         <div class="title">
             <h1 class="title-text">Latest Mangas</h1>
             <div class="title-underline"></div>
@@ -38,7 +73,7 @@
                     <h2>
                         <a href="manga.php?manga_id=<?php echo $res['manga_id'] ?>" class="link"><?php echo $res['manga_name'] ?></a>
                     </h2>
-                    <a href="chapter.php?chapter_id=<?php echo $row['chapter_id'] ?>" class="link chapter-name"><?php echo $row['chapter_name'] ?></a>
+                    <a href="chapter.php?chapter_id=<?php echo $row['chapter_id'] ?>" class="link chapter-name"><?php echo Shorten($row['chapter_name'], 30) ?></a>
                     <p class="elapsed-time"><?php echo $row['date_release'] ?></p>
                 </div>
             <?php endwhile;?>
