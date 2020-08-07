@@ -31,6 +31,8 @@ MangaMe is a manga reading website inspired by many other similar web pages such
 ![Landing Page 1](https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/Landing%20Page.PNG)
 ![Landing Page 2](https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/Landing%20Page%202.PNG)
 ![Manga Info Page](https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/Manga%20Info%20Page.PNG)
+![Page Content 1](https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/Page%20Content%201.PNG)
+![Page Content 2](https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/Page%20content%202.PNG)
 ![Personal Info Reader Page](https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/Personal%20Info%20Reader.PNG)
 
 
