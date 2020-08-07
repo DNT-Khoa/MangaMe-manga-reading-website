@@ -1,4 +1,5 @@
 # MangaMe - Online Manga Reading Website
+
 <p align="center">
   <img src="https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/MangaMe-logo.png" width="300" title="MangaMe Logo">
 </p>
