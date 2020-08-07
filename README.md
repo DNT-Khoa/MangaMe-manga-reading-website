@@ -1,4 +1,7 @@
 # MangaMe - Online Manga Reading Website
+<p align="center">
+  <img src="https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/MangaMe-logo.png" width="300" title="MangaMe Logo">
+</p>
 This project was organized during my second semester in my first year at university. I really like Japanese comics such as animes and mangas so I decided to choose this topic for my Web Development class !
 
 ## Table of contents
