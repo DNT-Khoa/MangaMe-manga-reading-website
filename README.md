@@ -22,6 +22,7 @@ MangaMe is a manga reading website inspired by many other similar web pages such
 - CSS
 - Ajax 
 - SlickJS
+- MySQL Server
 ## Screenshots
 ![Login Page](https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/Login%20Page.PNG)
 ![Signup Page](https://github.com/DNT-Khoa/MangaMe-Web-Development-Project/blob/master/img/Sign%20Up%20Page.PNG)
